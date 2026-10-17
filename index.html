@@ -3,10 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Legadocs | Counter-Strike 1.6 original</title>
-<meta name="description" content="Legadocs: comunidade de Counter-Strike 1.6 original, sem mods, sem poluição visual e sem poluição sonora. Apenas o bom e velho CS 1.6.">
-<link rel="canonical" href="https://www.legadocs.com.br/">
+
+<meta name="description" content="Legadocs: comunidade dedicada à preservação do Counter-Strike 1.6 original, com a parceria da Extreme Academy. Sem mods, sem poluição visual e sonora.">
+
+<link rel="canonical" href="https://www.legadocs.top/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
 <style>
   :root {
     --fundo: #000000;
@@ -14,7 +18,13 @@
     --amarelo-escuro: #b39500;
     --linha: #3a3200;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
   body {
     background: var(--fundo);
     color: var(--amarelo);
@@ -22,23 +32,31 @@
     line-height: 1.7;
     font-size: 17px;
   }
+
   header {
     border-bottom: 2px solid var(--amarelo);
     padding: 28px 20px 0;
     text-align: center;
   }
+
   header .titulo {
     font-size: 2.6rem;
     letter-spacing: 6px;
     text-transform: uppercase;
     font-weight: bold;
   }
-  header .titulo a { color: var(--amarelo); text-decoration: none; }
+
+  header .titulo a {
+    color: var(--amarelo);
+    text-decoration: none;
+  }
+
   header p.sub {
     color: var(--amarelo-escuro);
     margin-top: 4px;
     font-size: 0.95rem;
   }
+
   nav {
     display: flex;
     justify-content: center;
@@ -46,6 +64,7 @@
     gap: 6px;
     margin-top: 22px;
   }
+
   nav a {
     color: var(--amarelo);
     text-decoration: none;
@@ -56,16 +75,19 @@
     letter-spacing: 2px;
     font-size: 0.95rem;
   }
+
   nav a:hover,
   nav a.ativo {
     background: var(--amarelo);
     color: var(--fundo);
   }
+
   main {
     max-width: 820px;
     margin: 0 auto;
     padding: 40px 20px 60px;
   }
+
   h1, h2 {
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -74,21 +96,66 @@
     padding-left: 12px;
     margin: 32px 0 14px;
   }
-  h1 { margin-top: 0; }
-  p { margin-bottom: 16px; }
+
+  h1 {
+    margin-top: 0;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+
   ul.regras {
     list-style: none;
     margin: 10px 0 20px;
   }
+
   ul.regras li {
     border: 1px solid var(--linha);
     padding: 10px 14px;
     margin-bottom: 8px;
   }
+
   ul.regras li::before {
     content: "> ";
     font-weight: bold;
   }
+
+  .parceria {
+    border: 1px solid var(--amarelo);
+    padding: 22px;
+    margin: 32px 0;
+    text-align: center;
+  }
+
+  .parceria h2 {
+    border: none;
+    padding: 0;
+    margin: 0 0 16px;
+    font-size: 1.35rem;
+  }
+
+  .parceria .nome {
+    display: block;
+    color: var(--amarelo);
+    font-size: 1.45rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 10px 0 4px;
+  }
+
+  .parceria .fundador {
+    color: var(--amarelo-escuro);
+    margin-bottom: 18px;
+  }
+
+  .parceria .frase {
+    border-top: 1px solid var(--linha);
+    padding-top: 16px;
+    margin: 0;
+    font-weight: bold;
+  }
+
   .destaque {
     border: 1px solid var(--amarelo);
     padding: 18px 20px;
@@ -96,6 +163,7 @@
     text-align: center;
     font-size: 1.1rem;
   }
+
   footer {
     border-top: 1px solid var(--linha);
     text-align: center;
@@ -103,18 +171,42 @@
     color: var(--amarelo-escuro);
     font-size: 0.85rem;
   }
+
   @media (max-width: 520px) {
-    header .titulo { font-size: 1.8rem; letter-spacing: 3px; }
-    nav a { padding: 8px 14px; font-size: 0.8rem; }
-    body { font-size: 16px; }
+    header .titulo {
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+    }
+
+    nav a {
+      padding: 8px 14px;
+      font-size: 0.8rem;
+    }
+
+    body {
+      font-size: 16px;
+    }
+
+    .parceria {
+      padding: 18px;
+    }
+
+    .parceria .nome {
+      font-size: 1.2rem;
+    }
   }
 </style>
 </head>
+
 <body>
 
 <header>
-  <div class="titulo"><a href="/">Legadocs</a></div>
+  <div class="titulo">
+    <a href="/">Legadocs</a>
+  </div>
+
   <p class="sub">Counter-Strike 1.6 — do jeito que sempre foi</p>
+
   <nav>
     <a href="/" class="ativo">Início</a>
     <a href="/servidores.html">Servidores</a>
@@ -124,28 +216,62 @@
 
 <main>
   <h1>Nossa história</h1>
+
   <p>
-    Houve um tempo em que bastava abrir o Counter-Strike 1.6, escolher um mapa e jogar.
-    Sem menus enormes, sem efeitos exagerados, sem nada entre você e a partida.
-    Era o jogo, o mapa, o time e o som seco de um AWP acertando no meio da tela.
+    Houve um tempo em que bastava abrir o Counter-Strike 1.6,
+    escolher um mapa e jogar. Sem menus enormes, sem efeitos
+    exagerados, sem nada entre você e a partida. Era o jogo,
+    o mapa, o time e o som seco de um AWP acertando no meio da tela.
   </p>
+
   <p>
-    O Legadocs nasceu da saudade desse tempo e da vontade de manter a chama acesa.
-    Somos uma comunidade de jogadores que cresceu nas lan houses, nos servidores
-    de madrugada e nas partidas decididas no último round. Queremos que essa experiência
+    O Legadocs nasceu da saudade desse tempo e da vontade de manter
+    a chama acesa. Somos uma comunidade de jogadores que cresceu
+    nas lan houses, nos servidores de madrugada e nas partidas
+    decididas no último round. Queremos que essa experiência
     continue existindo, intacta.
   </p>
 
   <h2>Nossa missão</h2>
+
   <p>
-    Preservar a originalidade do Counter-Strike 1.6. Nada além do que o jogo sempre foi:
+    Preservar a originalidade do Counter-Strike 1.6.
+    Nada além do que o jogo sempre foi:
   </p>
+
   <ul class="regras">
     <li>Sem poluição visual: nada de plugins que enchem a tela de avisos, textos e efeitos.</li>
     <li>Sem poluição sonora: nada de músicas, vozes ou sons que não fazem parte do jogo.</li>
     <li>Sem mods: nenhuma modificação que mude a jogabilidade original.</li>
     <li>Apenas o bom e velho Counter-Strike 1.6.</li>
   </ul>
+
+  <section class="parceria">
+    <h2>Uma ideia que nasceu da parceria</h2>
+
+    <span class="nome">EXTREME ACADEMY</span>
+
+    <p class="fundador">
+      Fundador: Gabriel Easy
+    </p>
+
+    <p>
+      A ideia do Legadocs ganhou forma a partir da parceria
+      e da troca de ideias com a Extreme Academy, iniciativa
+      fundada por Gabriel Easy.
+    </p>
+
+    <p>
+      Essa conexão foi fundamental para tornar o projeto possível
+      e fortalecer o propósito de preservar a essência do
+      Counter-Strike 1.6: uma experiência clássica, autêntica
+      e sem excessos.
+    </p>
+
+    <p class="frase">
+      Uma paixão em comum: manter vivo o Counter-Strike 1.6 clássico.
+    </p>
+  </section>
 
   <div class="destaque">
     Sem enfeite. Sem firula. Só Counter-Strike 1.6.
