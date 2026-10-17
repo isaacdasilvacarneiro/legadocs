@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Legadocs</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
   :root {
     --fundo: #000000;
@@ -173,58 +174,3 @@
     <p>Todos os nossos servidores rodam o jogo original, sem mods e sem plugins que alterem a experiência.</p>
     <table>
       <thead>
-        <tr><th>Servidor</th><th>Mapa</th><th>Endereço</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Legadocs #1</td><td>de_dust2</td><td>000.000.000.000:27015</td></tr>
-        <tr><td>Legadocs #2</td><td>de_inferno</td><td>000.000.000.000:27016</td></tr>
-      </tbody>
-    </table>
-    <p style="margin-top:16px; color: var(--amarelo-escuro);">
-      Para entrar: abra o console do jogo (tecla ") e digite connect seguido do endereço.
-    </p>
-  </section>
-
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Quer jogar com a gente, tirar uma dúvida ou sugerir um mapa clássico? Fale com a comunidade:</p>
-    <ul class="regras">
-      <li>E-mail: contato@seudominio.com</li>
-      <li>Discord: seu-link-aqui</li>
-      <li>WhatsApp: (00) 00000-0000</li>
-    </ul>
-  </section>
-
-</main>
-
-<footer>
-  Legadocs &copy; <span id="ano"></span> — Counter-Strike 1.6 original
-</footer>
-
-<script>
-  var links = document.querySelectorAll("nav a");
-  var secoes = document.querySelectorAll("section");
-
-  function mostrar(id) {
-    var existe = false;
-    secoes.forEach(function (s) { if (s.id === id) existe = true; });
-    if (!existe) id = "inicio";
-    secoes.forEach(function (s) { s.classList.toggle("ativa", s.id === id); });
-    links.forEach(function (a) { a.classList.toggle("ativo", a.dataset.sec === id); });
-    window.scrollTo(0, 0);
-  }
-
-  links.forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      e.preventDefault();
-      history.replaceState(null, "", "#" + a.dataset.sec);
-      mostrar(a.dataset.sec);
-    });
-  });
-
-  mostrar(location.hash.replace("#", "") || "inicio");
-  document.getElementById("ano").textContent = new Date().getFullYear();
-</script>
-
-</body>
-</html>
