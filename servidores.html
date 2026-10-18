@@ -6,7 +6,7 @@
 
   <title>Servidores | Legadocs - Counter-Strike 1.6 original</title>
 
-  <meta name="description" content="Conheça os servidores de Counter-Strike 1.6 do Legadocs. Jogo clássico, sem mods que alterem a experiência original.">
+  <meta name="description" content="Conheça os servidores de Counter-Strike 1.6 do Legadocs. Jogo clássico, com foco na experiência original.">
 
   <link rel="canonical" href="https://www.legadocs.top/servidores.html">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -101,48 +101,54 @@
       margin-bottom: 24px;
     }
 
-    .lista-servidores {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    .tabela-servidores {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
     }
 
-    .servidor {
+    .tabela-servidores th,
+    .tabela-servidores td {
       border: 1px solid var(--linha);
-      border-left: 4px solid var(--amarelo);
-      padding: 16px 18px;
-      transition: border-color 0.2s ease;
+      padding: 12px;
+      text-align: left;
     }
 
-    .servidor:hover {
-      border-color: var(--amarelo);
-    }
-
-    .servidor h2 {
+    .tabela-servidores th {
+      background: #1a1600;
       color: var(--amarelo);
-      font-size: 1.15rem;
-      letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .rotulo {
-      color: var(--amarelo-escuro);
+      letter-spacing: 1px;
       font-size: 0.85rem;
     }
 
-    .ip {
+    .tabela-servidores td {
       color: var(--amarelo);
-      font-weight: bold;
-      overflow-wrap: anywhere;
-      margin-bottom: 0;
     }
 
-    .dica {
+    .tipo {
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .endereco {
+      color: var(--amarelo);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .endereco:hover {
+      text-decoration: underline;
+    }
+
+    .instrucoes {
+      margin-top: 22px;
       color: var(--amarelo-escuro);
-      font-size: 0.85rem;
-      margin-top: 5px;
-      margin-bottom: 0;
+      font-size: 0.9rem;
+    }
+
+    .instrucoes strong {
+      color: var(--amarelo);
     }
 
     footer {
@@ -165,15 +171,22 @@
       }
 
       body {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       main {
-        padding: 30px 14px 45px;
+        padding: 30px 12px 45px;
       }
 
-      .servidor {
-        padding: 14px;
+      .tabela-servidores th,
+      .tabela-servidores td {
+        padding: 9px 6px;
+        font-size: 0.78rem;
+        overflow-wrap: anywhere;
+      }
+
+      .endereco {
+        white-space: normal;
       }
     }
   </style>
@@ -201,37 +214,58 @@
     <h1>Servidores</h1>
 
     <p class="intro">
-      Conheça nossos servidores de Counter-Strike 1.6 clássico.
-      Nosso objetivo é preservar a experiência original do jogo,
-      sem modificações desnecessárias na jogabilidade.
+      Confira nossos servidores de Counter-Strike 1.6.
+      Escolha um servidor e conecte-se para jogar.
     </p>
 
-    <div class="lista-servidores">
+    <table class="tabela-servidores">
+      <thead>
+        <tr>
+          <th>Servidor</th>
+          <th>Tipo</th>
+          <th>Endereço</th>
+        </tr>
+      </thead>
 
-      <section class="servidor">
-        <h2>CPL</h2>
-        <p class="rotulo">Endereço do servidor</p>
-        <p class="ip">82.27.38.3:27015</p>
-        <p class="dica">
-          Para conectar, abra o console do jogo e digite:
-          connect 82.27.38.3:27015
-        </p>
-      </section>
+      <tbody>
+        <tr>
+          <td>Legadocs #1</td>
+          <td class="tipo">CPL</td>
+          <td>
+            <a class="endereco"
+               href="steam://connect/82.27.38.3:27015"
+               title="Conectar ao Legadocs #1">
+              82.27.38.3:27015
+            </a>
+          </td>
+        </tr>
 
-      <!--
-      MODELO PARA ADICIONAR OUTROS SERVIDORES:
+        <!--
+        MODELO PARA ADICIONAR OUTRO SERVIDOR:
 
-      <section class="servidor">
-        <h2>NOME DO SERVIDOR</h2>
-        <p class="rotulo">Endereço do servidor</p>
-        <p class="ip">IP:PORTA</p>
-        <p class="dica">
-          Para conectar, abra o console do jogo e digite:
-          connect IP:PORTA
-        </p>
-      </section>
-      -->
+        <tr>
+          <td>Legadocs #2</td>
+          <td class="tipo">4FUN</td>
+          <td>
+            <a class="endereco"
+               href="steam://connect/IP:PORTA">
+              IP:PORTA
+            </a>
+          </td>
+        </tr>
+        -->
 
+      </tbody>
+    </table>
+
+    <div class="instrucoes">
+      <p><strong>Como conectar</strong></p>
+      <p>
+        Abra o console do Counter-Strike 1.6 e digite:
+      </p>
+      <p>
+        <strong>connect 82.27.38.3:27015</strong>
+      </p>
     </div>
   </main>
 
