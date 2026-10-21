@@ -8,6 +8,7 @@
 
 <meta name="description" content="Legadocs: comunidade dedicada à preservação do Counter-Strike 1.6 original, com a parceria da Extreme Academy. Sem mods, sem poluição visual e sonora.">
 
+<meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://www.legadocs.top/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
@@ -35,8 +36,14 @@
 
   header {
     border-bottom: 2px solid var(--amarelo);
-    padding: 28px 20px 0;
+    padding: 24px 20px 0;
     text-align: center;
+  }
+
+  .topo {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   header .titulo {
@@ -55,6 +62,40 @@
     color: var(--amarelo-escuro);
     margin-top: 4px;
     font-size: 0.95rem;
+  }
+
+  .idiomas {
+    position: absolute;
+    right: 0;
+    top: 4px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .idioma {
+    background: #090909;
+    color: var(--amarelo);
+    border: 1px solid var(--linha);
+    padding: 6px 9px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    border-radius: 3px;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .idioma:hover,
+  .idioma.ativo {
+    background: var(--amarelo);
+    color: #000;
+    border-color: var(--amarelo);
+  }
+
+  .idioma:focus-visible,
+  nav a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
   }
 
   nav {
@@ -172,6 +213,18 @@
     font-size: 0.85rem;
   }
 
+  @media (max-width: 700px) {
+    header {
+      padding-top: 64px;
+    }
+
+    .idiomas {
+      top: -48px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
+
   @media (max-width: 520px) {
     header .titulo {
       font-size: 1.8rem;
@@ -194,6 +247,11 @@
     .parceria .nome {
       font-size: 1.2rem;
     }
+
+    h1, h2 {
+      font-size: 1.25rem;
+      letter-spacing: 2px;
+    }
   }
 </style>
 </head>
@@ -201,30 +259,56 @@
 <body>
 
 <header>
-  <div class="titulo">
-    <a href="/">Legadocs</a>
+  <div class="topo">
+
+    <div class="idiomas" aria-label="Select language">
+      <button
+        type="button"
+        class="idioma ativo"
+        data-lang="pt-BR"
+        aria-label="Português brasileiro"
+        aria-pressed="true">
+        🇧🇷 PT
+      </button>
+
+      <button
+        type="button"
+        class="idioma"
+        data-lang="en-US"
+        aria-label="American English"
+        aria-pressed="false">
+        🇺🇸 EN
+      </button>
+    </div>
+
+    <div class="titulo">
+      <a href="/" data-i18n="brand">Legadocs</a>
+    </div>
+
+    <p class="sub" data-i18n="tagline">
+      Counter-Strike 1.6 — do jeito que sempre foi
+    </p>
+
+    <nav aria-label="Main navigation">
+      <a href="/" class="ativo" data-i18n="navHome">Início</a>
+      <a href="/servidores.html" data-i18n="navServers">Servidores</a>
+      <a href="/contato.html" data-i18n="navContact">Contato</a>
+    </nav>
+
   </div>
-
-  <p class="sub">Counter-Strike 1.6 — do jeito que sempre foi</p>
-
-  <nav>
-    <a href="/" class="ativo">Início</a>
-    <a href="/servidores.html">Servidores</a>
-    <a href="/contato.html">Contato</a>
-  </nav>
 </header>
 
 <main>
-  <h1>Nossa história</h1>
+  <h1 data-i18n="historyTitle">Nossa história</h1>
 
-  <p>
+  <p data-i18n="history1">
     Houve um tempo em que bastava abrir o Counter-Strike 1.6,
     escolher um mapa e jogar. Sem menus enormes, sem efeitos
     exagerados, sem nada entre você e a partida. Era o jogo,
     o mapa, o time e o som seco de um AWP acertando no meio da tela.
   </p>
 
-  <p>
+  <p data-i18n="history2">
     O Legadocs nasceu da saudade desse tempo e da vontade de manter
     a chama acesa. Somos uma comunidade de jogadores que cresceu
     nas lan houses, nos servidores de madrugada e nas partidas
@@ -232,55 +316,206 @@
     continue existindo, intacta.
   </p>
 
-  <h2>Nossa missão</h2>
+  <h2 data-i18n="missionTitle">Nossa missão</h2>
 
-  <p>
+  <p data-i18n="missionIntro">
     Preservar a originalidade do Counter-Strike 1.6.
     Nada além do que o jogo sempre foi:
   </p>
 
   <ul class="regras">
-    <li>Sem poluição visual: nada de plugins que enchem a tela de avisos, textos e efeitos.</li>
-    <li>Sem poluição sonora: nada de músicas, vozes ou sons que não fazem parte do jogo.</li>
-    <li>Sem mods: nenhuma modificação que mude a jogabilidade original.</li>
-    <li>Apenas o bom e velho Counter-Strike 1.6.</li>
+    <li data-i18n="rule1">
+      Sem poluição visual: nada de plugins que enchem a tela de avisos, textos e efeitos.
+    </li>
+    <li data-i18n="rule2">
+      Sem poluição sonora: nada de músicas, vozes ou sons que não fazem parte do jogo.
+    </li>
+    <li data-i18n="rule3">
+      Sem mods: nenhuma modificação que mude a jogabilidade original.
+    </li>
+    <li data-i18n="rule4">
+      Apenas o bom e velho Counter-Strike 1.6.
+    </li>
   </ul>
 
   <section class="parceria">
-    <h2>Uma ideia que nasceu da parceria</h2>
+    <h2 data-i18n="partnershipTitle">
+      Uma ideia que nasceu da parceria
+    </h2>
 
     <span class="nome">EXTREME ACADEMY</span>
 
-    <p class="fundador">
+    <p class="fundador" data-i18n="founder">
       Fundador: Gabriel Easy
     </p>
 
-    <p>
+    <p data-i18n="partnership1">
       A ideia do Legadocs ganhou forma a partir da parceria
       e da troca de ideias com a Extreme Academy, iniciativa
       fundada por Gabriel Easy.
     </p>
 
-    <p>
+    <p data-i18n="partnership2">
       Essa conexão foi fundamental para tornar o projeto possível
       e fortalecer o propósito de preservar a essência do
       Counter-Strike 1.6: uma experiência clássica, autêntica
       e sem excessos.
     </p>
 
-    <p class="frase">
+    <p class="frase" data-i18n="partnershipQuote">
       Uma paixão em comum: manter vivo o Counter-Strike 1.6 clássico.
     </p>
   </section>
 
-  <div class="destaque">
+  <div class="destaque" data-i18n="highlight">
     Sem enfeite. Sem firula. Só Counter-Strike 1.6.
   </div>
 </main>
 
 <footer>
-  Legadocs &copy; 2026 — Counter-Strike 1.6 original
+  <span data-i18n="footer">Legadocs © 2026 — Counter-Strike 1.6 original</span>
 </footer>
+
+<script>
+(function () {
+  "use strict";
+
+  const translations = {
+    "pt-BR": {
+      pageTitle: "Legadocs | Counter-Strike 1.6 original",
+      description: "Legadocs: comunidade dedicada à preservação do Counter-Strike 1.6 original, com a parceria da Extreme Academy. Sem mods, sem poluição visual e sonora.",
+      brand: "Legadocs",
+      tagline: "Counter-Strike 1.6 — do jeito que sempre foi",
+      navHome: "Início",
+      navServers: "Servidores",
+      navContact: "Contato",
+      historyTitle: "Nossa história",
+      history1: "Houve um tempo em que bastava abrir o Counter-Strike 1.6, escolher um mapa e jogar. Sem menus enormes, sem efeitos exagerados, sem nada entre você e a partida. Era o jogo, o mapa, o time e o som seco de um AWP acertando no meio da tela.",
+      history2: "O Legadocs nasceu da saudade desse tempo e da vontade de manter a chama acesa. Somos uma comunidade de jogadores que cresceu nas lan houses, nos servidores de madrugada e nas partidas decididas no último round. Queremos que essa experiência continue existindo, intacta.",
+      missionTitle: "Nossa missão",
+      missionIntro: "Preservar a originalidade do Counter-Strike 1.6. Nada além do que o jogo sempre foi:",
+      rule1: "Sem poluição visual: nada de plugins que enchem a tela de avisos, textos e efeitos.",
+      rule2: "Sem poluição sonora: nada de músicas, vozes ou sons que não fazem parte do jogo.",
+      rule3: "Sem mods: nenhuma modificação que mude a jogabilidade original.",
+      rule4: "Apenas o bom e velho Counter-Strike 1.6.",
+      partnershipTitle: "Uma ideia que nasceu da parceria",
+      founder: "Fundador: Gabriel Easy",
+      partnership1: "A ideia do Legadocs ganhou forma a partir da parceria e da troca de ideias com a Extreme Academy, iniciativa fundada por Gabriel Easy.",
+      partnership2: "Essa conexão foi fundamental para tornar o projeto possível e fortalecer o propósito de preservar a essência do Counter-Strike 1.6: uma experiência clássica, autêntica e sem excessos.",
+      partnershipQuote: "Uma paixão em comum: manter vivo o Counter-Strike 1.6 clássico.",
+      highlight: "Sem enfeite. Sem firula. Só Counter-Strike 1.6.",
+      footer: "Legadocs © 2026 — Counter-Strike 1.6 original",
+      documentLanguage: "pt-BR",
+      navLabel: "Navegação principal",
+      languageLabel: "Selecionar idioma",
+      ptButton: "Português brasileiro",
+      enButton: "Inglês americano"
+    },
+
+    "en-US": {
+      pageTitle: "Legadocs | Classic Counter-Strike 1.6",
+      description: "Legadocs is a community dedicated to preserving classic Counter-Strike 1.6, in partnership with Extreme Academy. No gameplay mods, no visual clutter, no unnecessary sounds.",
+      brand: "Legadocs",
+      tagline: "Counter-Strike 1.6 — just the way it used to be",
+      navHome: "Home",
+      navServers: "Servers",
+      navContact: "Contact",
+      historyTitle: "Our Story",
+      history1: "There was a time when all you had to do was launch Counter-Strike 1.6, pick a map, and play. No oversized menus, no over-the-top effects, nothing getting between you and the match. Just the game, the map, your team, and the unmistakable sound of an AWP hitting its mark.",
+      history2: "Legadocs was born out of nostalgia for those days and a desire to keep that spirit alive. We're a community of players who grew up in LAN cafés, playing on late-night servers and fighting through matches decided in the final round. We want that experience to live on, just as it was.",
+      missionTitle: "Our Mission",
+      missionIntro: "Preserve the original Counter-Strike 1.6 experience. Nothing beyond what the game was always meant to be:",
+      rule1: "No visual clutter: no plugins filling your screen with notices, text, and effects.",
+      rule2: "No audio clutter: no music, voiceovers, or sounds that don't belong in the original game.",
+      rule3: "No gameplay mods: no modifications that change the original gameplay.",
+      rule4: "Just good old Counter-Strike 1.6.",
+      partnershipTitle: "An Idea Built Through Partnership",
+      founder: "Founder: Gabriel Easy",
+      partnership1: "Legadocs took shape through our partnership and exchange of ideas with Extreme Academy, an initiative founded by Gabriel Easy.",
+      partnership2: "This partnership was essential in bringing the project to life and strengthening our mission to preserve the essence of Counter-Strike 1.6: a classic, authentic experience without unnecessary extras.",
+      partnershipQuote: "A shared passion: keeping classic Counter-Strike 1.6 alive.",
+      highlight: "No frills. No gimmicks. Just Counter-Strike 1.6.",
+      footer: "Legadocs © 2026 — Classic Counter-Strike 1.6",
+      documentLanguage: "en-US",
+      navLabel: "Main navigation",
+      languageLabel: "Select language",
+      ptButton: "Brazilian Portuguese",
+      enButton: "American English"
+    }
+  };
+
+  const languageButtons = document.querySelectorAll("[data-lang]");
+
+  function applyLanguage(language) {
+    const selectedLanguage = translations[language]
+      ? language
+      : "pt-BR";
+
+    const dictionary = translations[selectedLanguage];
+
+    document.documentElement.lang = dictionary.documentLanguage;
+    document.title = dictionary.pageTitle;
+
+    const description = document.querySelector('meta[name="description"]');
+    if (description) {
+      description.setAttribute("content", dictionary.description);
+    }
+
+    document.querySelectorAll("[data-i18n]").forEach(function (element) {
+      const key = element.getAttribute("data-i18n");
+
+      if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
+        element.textContent = dictionary[key];
+      }
+    });
+
+    const nav = document.querySelector("header nav");
+    if (nav) {
+      nav.setAttribute("aria-label", dictionary.navLabel);
+    }
+
+    const languageContainer = document.querySelector(".idiomas");
+    if (languageContainer) {
+      languageContainer.setAttribute("aria-label", dictionary.languageLabel);
+    }
+
+    languageButtons.forEach(function (button) {
+      const isActive = button.dataset.lang === selectedLanguage;
+
+      button.classList.toggle("ativo", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+
+      if (button.dataset.lang === "pt-BR") {
+        button.setAttribute("aria-label", dictionary.ptButton);
+      } else {
+        button.setAttribute("aria-label", dictionary.enButton);
+      }
+    });
+
+    try {
+      localStorage.setItem("legadocs-language", selectedLanguage);
+    } catch (error) {
+      // O site continua funcionando se o navegador bloquear o armazenamento.
+    }
+  }
+
+  languageButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      applyLanguage(button.dataset.lang);
+    });
+  });
+
+  let savedLanguage = "pt-BR";
+
+  try {
+    savedLanguage = localStorage.getItem("legadocs-language") || "pt-BR";
+  } catch (error) {
+    // Usa português como padrão se o armazenamento não estiver disponível.
+  }
+
+  applyLanguage(savedLanguage);
+})();
+</script>
 
 </body>
 </html>
