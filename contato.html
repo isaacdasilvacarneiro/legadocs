@@ -33,9 +33,35 @@
   }
 
   header {
+    position: relative;
     border-bottom: 2px solid var(--amarelo);
     padding: 28px 20px 0;
     text-align: center;
+  }
+
+  .idiomas {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .idiomas button {
+    background: transparent;
+    border: 1px solid var(--linha);
+    padding: 5px 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    opacity: 0.65;
+  }
+
+  .idiomas button:hover,
+  .idiomas button.ativo {
+    border-color: var(--amarelo);
+    opacity: 1;
   }
 
   header .titulo {
@@ -146,6 +172,17 @@
   }
 
   @media (max-width: 520px) {
+    header {
+      padding-top: 54px;
+    }
+
+    .idiomas {
+      top: 10px;
+      right: 0;
+      left: 0;
+      justify-content: center;
+    }
+
     header .titulo {
       font-size: 1.8rem;
       letter-spacing: 3px;
@@ -170,36 +207,47 @@
 <body>
 
 <header>
-  <div class="titulo">
-    <a href="/">Legadocs</a>
+  <div class="idiomas" role="group" aria-label="Selecionar idioma">
+    <button type="button" id="btn-pt" class="ativo"
+      aria-label="Português do Brasil" title="Português do Brasil"
+      onclick="applyLanguage('pt')">🇧🇷</button>
+    <button type="button" id="btn-en"
+      aria-label="English" title="English"
+      onclick="applyLanguage('en')">🇺🇸</button>
   </div>
 
-  <p class="sub">Counter-Strike 1.6 — do jeito que sempre foi</p>
+  <div class="titulo">
+    <a href="/" data-i18n="brand">Legadocs</a>
+  </div>
 
-  <nav>
-    <a href="/">Início</a>
-    <a href="/servidores.html">Servidores</a>
-    <a href="/contato.html" class="ativo">Contato</a>
+  <p class="sub" data-i18n="tagline">
+    Counter-Strike 1.6 — do jeito que sempre foi
+  </p>
+
+  <nav aria-label="Navegação principal" data-i18n-aria="navLabel">
+    <a href="/" data-i18n="navHome">Início</a>
+    <a href="/servidores.html" data-i18n="navServers">Servidores</a>
+    <a href="/contato.html" class="ativo" data-i18n="navContact">Contato</a>
   </nav>
 </header>
 
 <main>
-  <h1>Fale conosco</h1>
+  <h1 data-i18n="pageHeading">Fale conosco</h1>
 
-  <p>
+  <p data-i18n="intro">
     Tem alguma dúvida, sugestão ou interesse em conversar sobre o
     Legadocs? Entre em contato conosco.
   </p>
 
-  <p>
+  <p data-i18n="mission">
     Nosso objetivo é preservar a essência do Counter-Strike 1.6
     e manter viva a experiência clássica do jogo.
   </p>
 
   <section class="contato">
-    <h2>WhatsApp</h2>
+    <h2 data-i18n="whatsappTitle">WhatsApp</h2>
 
-    <p>
+    <p data-i18n="whatsappText">
       Utilize nosso WhatsApp para entrar em contato diretamente
       com a administração da comunidade.
     </p>
@@ -208,37 +256,139 @@
       class="botao"
       href="https://wa.me/5581989084421?text=Ol%C3%A1%2C%20vim%20pelo%20site%20Legadocs!"
       target="_blank"
-      rel="noopener noreferrer">
+      rel="noopener noreferrer"
+      data-i18n="whatsappButton">
       Fale conosco pelo WhatsApp
     </a>
   </section>
 
   <section class="contato">
-    <h2>E-mail da comunidade</h2>
+    <h2 data-i18n="emailTitle">E-mail da comunidade</h2>
 
-    <p>
+    <p data-i18n="emailText">
       Nosso canal de e-mail será disponibilizado em breve.
       Estamos preparando esse contato para facilitar a comunicação
       sobre o projeto e os servidores.
     </p>
 
-    <p class="observacao">
+    <p class="observacao" data-i18n="emailNote">
       E-mail da comunidade em breve.
     </p>
   </section>
 
   <div class="contato">
-    <h2>Legadocs</h2>
+    <h2 data-i18n="brand">Legadocs</h2>
 
-    <p>
+    <p data-i18n="motto">
       Sem enfeite. Sem firula. Só Counter-Strike 1.6.
     </p>
   </div>
 </main>
 
-<footer>
+<footer data-i18n="footer">
   Legadocs &copy; 2026 — Counter-Strike 1.6 original
 </footer>
+
+<script>
+  const translations = {
+    pt: {
+      lang: "pt-BR",
+      pageTitle: "Contato | Legadocs - Counter-Strike 1.6 original",
+      description: "Entre em contato com o Legadocs, comunidade dedicada à preservação do Counter-Strike 1.6 original.",
+      brand: "Legadocs",
+      tagline: "Counter-Strike 1.6 — do jeito que sempre foi",
+      navHome: "Início",
+      navServers: "Servidores",
+      navContact: "Contato",
+      navLabel: "Navegação principal",
+      pageHeading: "Fale conosco",
+      intro: "Tem alguma dúvida, sugestão ou interesse em conversar sobre o Legadocs? Entre em contato conosco.",
+      mission: "Nosso objetivo é preservar a essência do Counter-Strike 1.6 e manter viva a experiência clássica do jogo.",
+      whatsappTitle: "WhatsApp",
+      whatsappText: "Utilize nosso WhatsApp para entrar em contato diretamente com a administração da comunidade.",
+      whatsappButton: "Fale conosco pelo WhatsApp",
+      emailTitle: "E-mail da comunidade",
+      emailText: "Nosso canal de e-mail será disponibilizado em breve. Estamos preparando esse contato para facilitar a comunicação sobre o projeto e os servidores.",
+      emailNote: "E-mail da comunidade em breve.",
+      motto: "Sem enfeite. Sem firula. Só Counter-Strike 1.6.",
+      footer: "Legadocs © 2026 — Counter-Strike 1.6 original"
+    },
+
+    en: {
+      lang: "en",
+      pageTitle: "Contact | Legadocs - Classic Counter-Strike 1.6",
+      description: "Contact Legadocs, a community dedicated to preserving the original Counter-Strike 1.6 experience.",
+      brand: "Legadocs",
+      tagline: "Counter-Strike 1.6 — the way it was meant to be",
+      navHome: "Home",
+      navServers: "Servers",
+      navContact: "Contact",
+      navLabel: "Main navigation",
+      pageHeading: "Get in Touch",
+      intro: "Have a question, suggestion, or want to talk about Legadocs? We'd love to hear from you.",
+      mission: "Our goal is to preserve the essence of Counter-Strike 1.6 and keep the game's classic experience alive.",
+      whatsappTitle: "WhatsApp",
+      whatsappText: "Message us on WhatsApp to contact the community administration directly.",
+      whatsappButton: "Contact Us on WhatsApp",
+      emailTitle: "Community Email",
+      emailText: "Our community email address will be available soon. We're preparing this contact channel to make it easier to reach us about the project and our servers.",
+      emailNote: "Community email coming soon.",
+      motto: "No frills. No gimmicks. Just Counter-Strike 1.6.",
+      footer: "Legadocs © 2026 — Classic Counter-Strike 1.6"
+    }
+  };
+
+  function applyLanguage(language) {
+    const selected = translations[language] ? language : "pt";
+    const content = translations[selected];
+
+    document.documentElement.lang = content.lang;
+    document.title = content.pageTitle;
+
+    const description = document.querySelector('meta[name="description"]');
+    if (description) {
+      description.setAttribute("content", content.description);
+    }
+
+    document.querySelectorAll("[data-i18n]").forEach(function (element) {
+      const key = element.getAttribute("data-i18n");
+      if (content[key] !== undefined) {
+        element.textContent = content[key];
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (element) {
+      const key = element.getAttribute("data-i18n-aria");
+      if (content[key] !== undefined) {
+        element.setAttribute("aria-label", content[key]);
+      }
+    });
+
+    document.getElementById("btn-pt").classList.toggle("ativo", selected === "pt");
+    document.getElementById("btn-en").classList.toggle("ativo", selected === "en");
+
+    document.getElementById("btn-pt").setAttribute("aria-pressed", selected === "pt");
+    document.getElementById("btn-en").setAttribute("aria-pressed", selected === "en");
+
+    try {
+      localStorage.setItem("legadocs-language", selected);
+    } catch (error) {
+      // A página continua funcionando mesmo se o armazenamento estiver bloqueado.
+    }
+  }
+
+  (function () {
+    let savedLanguage = "pt";
+
+    try {
+      savedLanguage = localStorage.getItem("legadocs-language") || "pt";
+    } catch (error) {
+      // Usa português como idioma padrão.
+    }
+
+    applyLanguage(savedLanguage);
+  })();
+</script>
 
 </body>
 </html>
