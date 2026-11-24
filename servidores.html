@@ -6,7 +6,7 @@
 
   <title>Servidores | Legadocs - Counter-Strike 1.6 original</title>
 
-  <meta name="description" content="Conheça os servidores de Counter-Strike 1.6 do Legadocs no Brasil e nos Estados Unidos. Jogo clássico, com foco na experiência original.">
+  <meta name="description" content="Conheça o servidor brasileiro de Counter-Strike 1.6 do Legadocs. Jogo clássico, com foco na experiência original.">
 
   <meta name="theme-color" content="#000000">
   <link rel="canonical" href="https://www.legadocs.top/servidores.html">
@@ -64,34 +64,6 @@
       font-size: 0.95rem;
     }
 
-    .idiomas {
-      position: absolute;
-      right: 0;
-      top: 4px;
-      display: flex;
-      gap: 8px;
-    }
-
-    .idioma {
-      background: #090909;
-      color: var(--amarelo);
-      border: 1px solid var(--linha);
-      padding: 6px 9px;
-      cursor: pointer;
-      font: inherit;
-      font-size: 0.85rem;
-      line-height: 1.4;
-      border-radius: 3px;
-    }
-
-    .idioma:hover,
-    .idioma.ativo {
-      background: var(--amarelo);
-      color: #000;
-      border-color: var(--amarelo);
-    }
-
-    .idioma:focus-visible,
     nav a:focus-visible,
     .endereco:focus-visible {
       outline: 2px solid #fff;
@@ -212,12 +184,6 @@
       header {
         padding-top: 64px;
       }
-
-      .idiomas {
-        top: -48px;
-        right: 50%;
-        transform: translateX(50%);
-      }
     }
 
     @media (max-width: 520px) {
@@ -256,283 +222,66 @@
 <body>
   <header>
     <div class="topo">
-
-      <div class="idiomas" aria-label="Selecionar idioma">
-        <button
-          type="button"
-          class="idioma ativo"
-          data-lang="pt-BR"
-          aria-label="Português brasileiro"
-          aria-pressed="true">
-          🇧🇷 PT
-        </button>
-
-        <button
-          type="button"
-          class="idioma"
-          data-lang="en-US"
-          aria-label="Inglês americano"
-          aria-pressed="false">
-          🇺🇸 EN
-        </button>
+<div class="titulo">
+        <a href="/">Legadocs</a>
       </div>
 
-      <div class="titulo">
-        <a href="/" data-i18n="brand">Legadocs</a>
-      </div>
-
-      <p class="sub" data-i18n="tagline">
+      <p class="sub">
         Counter-Strike 1.6 — do jeito que sempre foi
       </p>
 
       <nav aria-label="Navegação principal">
-        <a href="/" data-i18n="navHome">Início</a>
-        <a href="/servidores.html" class="ativo" data-i18n="navServers">Servidores</a>
-        <a href="/contato.html" data-i18n="navContact">Contato</a>
+        <a href="/">Início</a>
+        <a href="/servidores.html" class="ativo">Servidores</a>
+        <a href="/contato.html">Contato</a>
       </nav>
 
     </div>
   </header>
 
   <main>
-    <h1 data-i18n="pageHeading">Servidores</h1>
+    <h1>Servidores</h1>
 
-    <p class="intro" data-i18n="intro">
-      Confira nossos servidores de Counter-Strike 1.6 no Brasil e nos
-      Estados Unidos. Escolha um servidor e conecte-se para jogar.
+    <p class="intro">
+      No momento, contamos com um servidor brasileiro de Counter-Strike 1.6. Conecte-se e venha jogar!
     </p>
 
     <section class="regiao">
-      <h2 data-i18n="brazilTitle">🇧🇷 Servidores do Brasil</h2>
+      <h2>🇧🇷 Servidores do Brasil</h2>
 
       <table class="tabela-servidores">
         <thead>
           <tr>
-            <th data-i18n="colServer">Servidor</th>
-            <th data-i18n="colType">Tipo</th>
-            <th data-i18n="colAddress">Endereço</th>
+            <th>Servidor</th>
+            <th>Tipo</th>
+            <th>Endereço</th>
           </tr>
         </thead>
 
         <tbody>
           <tr>
-            <td>Legadocs BR #1</td>
-            <td class="tipo">PUGMOD</td>
-            <td>
-              <a
-                class="endereco"
-                href="steam://connect/82.27.38.3:27015"
-                title="Conectar ao Legadocs BR #1 — PUGMOD"
-                data-i18n-title="connectBR1">
-                82.27.38.3:27015
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Legadocs BR #2</td>
+            <td>Legadocs BR</td>
             <td class="tipo">4FUN Old School</td>
             <td>
               <a
                 class="endereco"
                 href="steam://connect/82.27.38.3:27020"
-                title="Conectar ao Legadocs BR #2 — 4FUN Old School"
-                data-i18n-title="connectBR2">
+                title="Conectar ao Legadocs BR — 4FUN Old School">
                 82.27.38.3:27020
               </a>
             </td>
           </tr>
-
-          <tr>
-            <td>Legadocs BR #3</td>
-            <td class="tipo">PUGMOD</td>
-            <td>
-              <a
-                class="endereco"
-                href="steam://connect/82.27.38.3:27017"
-                title="Conectar ao Legadocs BR #3"
-                data-i18n-title="connectBR3">
-                82.27.38.3:27017
-              </a>
-            </td>
-          </tr>
         </tbody>
       </table>
     </section>
 
-    <section class="regiao">
-      <h2 data-i18n="usaTitle">🇺🇸 Servidores dos Estados Unidos</h2>
-
-      <table class="tabela-servidores">
-        <thead>
-          <tr>
-            <th data-i18n="colServer">Servidor</th>
-            <th data-i18n="colType">Tipo</th>
-            <th data-i18n="colAddress">Endereço</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>Legadocs #4 USA</td>
-            <td class="tipo" data-i18n="classicPublic">Classic Public</td>
-            <td>
-              <a
-                class="endereco"
-                href="steam://connect/167.148.161.246:27015"
-                title="Conectar ao Legadocs #4 USA">
-                167.148.161.246:27015
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
   </main>
 
   <footer>
-    <span data-i18n="footer">
+    <span>
       Legadocs © 2026 — Counter-Strike 1.6 original
     </span>
   </footer>
 
-  <script>
-    (function () {
-      "use strict";
-
-      const translations = {
-        "pt-BR": {
-          pageTitle: "Servidores | Legadocs - Counter-Strike 1.6 original",
-          description: "Conheça os servidores de Counter-Strike 1.6 do Legadocs no Brasil e nos Estados Unidos. Jogo clássico, com foco na experiência original.",
-          brand: "Legadocs",
-          tagline: "Counter-Strike 1.6 — do jeito que sempre foi",
-          navHome: "Início",
-          navServers: "Servidores",
-          navContact: "Contato",
-          pageHeading: "Servidores",
-          intro: "Confira nossos servidores de Counter-Strike 1.6 no Brasil e nos Estados Unidos. Escolha um servidor e conecte-se para jogar.",
-          brazilTitle: "🇧🇷 Servidores do Brasil",
-          usaTitle: "🇺🇸 Servidores dos Estados Unidos",
-          colServer: "Servidor",
-          colType: "Tipo",
-          colAddress: "Endereço",
-          connectBR1: "Conectar ao Legadocs BR #1 — PUGMOD",
-          connectBR2: "Conectar ao Legadocs BR #2 — 4FUN Old School",
-          connectBR3: "Conectar ao Legadocs BR #3",
-          classicPublic: "Classic Public",
-          ipPending: "IP em breve",
-          footer: "Legadocs © 2026 — Counter-Strike 1.6 original",
-          navLabel: "Navegação principal",
-          languageLabel: "Selecionar idioma",
-          ptButton: "Português brasileiro",
-          enButton: "Inglês americano"
-        },
-
-        "en-US": {
-          pageTitle: "Servers | Legadocs - Classic Counter-Strike 1.6",
-          description: "Explore Legadocs Counter-Strike 1.6 servers in Brazil and the United States. Classic gameplay focused on the original experience.",
-          brand: "Legadocs",
-          tagline: "Counter-Strike 1.6 — just the way it used to be",
-          navHome: "Home",
-          navServers: "Servers",
-          navContact: "Contact",
-          pageHeading: "Our Servers",
-          intro: "Check out our Counter-Strike 1.6 servers in Brazil and the United States. Choose a server and connect to play.",
-          brazilTitle: "🇧🇷 Brazil Servers",
-          usaTitle: "🇺🇸 United States Servers",
-          colServer: "Server",
-          colType: "Mode",
-          colAddress: "Address",
-          connectBR1: "Connect to Legadocs BR #1 — PUGMOD",
-          connectBR2: "Connect to Legadocs BR #2 — 4FUN Old School",
-          connectBR3: "Connect to Legadocs BR #3",
-          classicPublic: "Classic Public",
-          ipPending: "IP coming soon",
-          footer: "Legadocs © 2026 — Classic Counter-Strike 1.6",
-          navLabel: "Main navigation",
-          languageLabel: "Select language",
-          ptButton: "Brazilian Portuguese",
-          enButton: "American English"
-        }
-      };
-
-      const buttons = document.querySelectorAll("[data-lang]");
-
-      function applyLanguage(language) {
-        const selected = translations[language] ? language : "pt-BR";
-        const dictionary = translations[selected];
-
-        document.documentElement.lang = selected;
-        document.title = dictionary.pageTitle;
-
-        const description = document.querySelector('meta[name="description"]');
-        if (description) {
-          description.content = dictionary.description;
-        }
-
-        document.querySelectorAll("[data-i18n]").forEach(function (element) {
-          const key = element.dataset.i18n;
-
-          if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
-            element.textContent = dictionary[key];
-          }
-        });
-
-        document.querySelectorAll("[data-i18n-title]").forEach(function (element) {
-          const key = element.dataset.i18nTitle;
-
-          if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
-            element.title = dictionary[key];
-          }
-        });
-
-        const nav = document.querySelector("header nav");
-        if (nav) {
-          nav.setAttribute("aria-label", dictionary.navLabel);
-        }
-
-        const languageContainer = document.querySelector(".idiomas");
-        if (languageContainer) {
-          languageContainer.setAttribute("aria-label", dictionary.languageLabel);
-        }
-
-        buttons.forEach(function (button) {
-          const active = button.dataset.lang === selected;
-
-          button.classList.toggle("ativo", active);
-          button.setAttribute("aria-pressed", String(active));
-
-          button.setAttribute(
-            "aria-label",
-            button.dataset.lang === "pt-BR"
-              ? dictionary.ptButton
-              : dictionary.enButton
-          );
-        });
-
-        try {
-          localStorage.setItem("legadocs-language", selected);
-        } catch (error) {
-          // A página continua funcionando sem armazenamento local.
-        }
-      }
-
-      buttons.forEach(function (button) {
-        button.addEventListener("click", function () {
-          applyLanguage(button.dataset.lang);
-        });
-      });
-
-      let language = "pt-BR";
-
-      try {
-        language = localStorage.getItem("legadocs-language") || "pt-BR";
-      } catch (error) {
-        // Português é o idioma padrão.
-      }
-
-      applyLanguage(language);
-    })();
-  </script>
 </body>
 </html>
